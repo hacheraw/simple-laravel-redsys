@@ -16,6 +16,8 @@ return new class extends Migration
             $table->string('title');
             $table->text('description');
             $table->decimal('amount', 10, 2);
+            $table->boolean('is_paid')->default(false);
+            $table->dateTime('paid_at')->nullable();
             $table->timestamps();
         });
     }

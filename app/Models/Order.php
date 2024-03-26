@@ -10,4 +10,12 @@ class Order extends Model
 {
     use HasFactory;
     use HasUuids;
+
+    protected $fillable = [
+        'title',
+        'description',
+        'amount',
+        'is_paid',
+        'paid_at',
+    ];
 }
