@@ -49,7 +49,7 @@ class OrderResource extends Resource
                     ->icon('heroicon-o-clipboard')
                     ->html()
                     ->copyable()
-                    ->copyableState(fn (Order $order): string => route('pay', ['id' => $order->id])),
+                    ->copyableState(fn (Order $order): string => route('pay', ['code' => $order->code])),
 
             ])
             ->filters([
