@@ -9,8 +9,10 @@ use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\RichEditor;
+use Filament\Resources\RelationManagers\RelationManager;
 use Filament\Resources\Resource;
 use Filament\Tables;
+use Filament\Tables\Actions\Action;
 use Filament\Tables\Table;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Columns\ToggleColumn;
@@ -45,7 +47,9 @@ class OrderResource extends Resource
                 TextColumn::make('amount')->money('EUR'),
                 ToggleColumn::make('is_paid')->sortable(),
                 TextColumn::make('url')
-                    ->getStateUsing(function () { return '&nbsp;'; })
+                    ->getStateUsing(function () {
+                        return '&nbsp;';
+                    })
                     ->icon('heroicon-o-clipboard')
                     ->html()
                     ->copyable()
@@ -69,7 +73,7 @@ class OrderResource extends Resource
     public static function getRelations(): array
     {
         return [
-            //
+            RelationManagers\TransactionsRelationManager::class
         ];
     }
 

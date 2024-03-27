@@ -7,7 +7,9 @@ use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Model;
 use Creagia\LaravelRedsys\Concerns\CanCreateRedsysRequests;
 use Creagia\LaravelRedsys\Contracts\RedsysPayable;
+use Creagia\LaravelRedsys\Request as RedsysRequest;
 use Illuminate\Support\Str;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Order extends Model implements RedsysPayable
 {
@@ -36,6 +38,12 @@ class Order extends Model implements RedsysPayable
         $this->save();
     }
 
+    public function transactions(): HasMany
+    {
+        return $this->hasMany(RedsysRequest::class, 'model_id', 'id');
+    }
+
+    // No puedo hacerlo como clave primaria porque creagia/laravel-redsys sólo acepta primary keys numericas
     public static function booted() {
         static::creating(function ($model) {
             $model->code = Str::uuid();
