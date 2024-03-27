@@ -31,9 +31,9 @@ class OrderResource extends Resource
     {
         return $form
             ->schema([
-                TextInput::make('title')->required()->maxLength(255),
-                Forms\Components\TextInput::make('amount')->prefix('€')->numeric()->inputMode('decimal')->step(0.01)->required(),
-                RichEditor::make('description')->columnSpan([
+                TextInput::make('title')->translateLabel()->required()->maxLength(255),
+                Forms\Components\TextInput::make('amount')->translateLabel()->prefix('€')->numeric()->inputMode('decimal')->step(0.01)->required(),
+                RichEditor::make('description')->translateLabel()->columnSpan([
                     'lg' => 2,
                 ])->required()
             ]);
@@ -43,9 +43,9 @@ class OrderResource extends Resource
     {
         return $table
             ->columns([
-                TextColumn::make('title')->searchable()->grow(),
-                TextColumn::make('amount')->money('EUR'),
-                ToggleColumn::make('is_paid')->sortable(),
+                TextColumn::make('title')->searchable()->translateLabel()->grow(),
+                TextColumn::make('amount')->translateLabel()->money('EUR'),
+                ToggleColumn::make('is_paid')->translateLabel()->sortable(),
                 TextColumn::make('url')
                     ->getStateUsing(function () {
                         return '&nbsp;';
@@ -57,7 +57,7 @@ class OrderResource extends Resource
 
             ])
             ->filters([
-                Filter::make('is_paid')
+                Filter::make('is_paid')->translateLabel()
                     ->query(fn (Builder $query): Builder => $query->where('is_paid', true))
             ])
             ->actions([

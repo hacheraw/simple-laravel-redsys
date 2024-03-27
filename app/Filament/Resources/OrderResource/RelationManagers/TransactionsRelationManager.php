@@ -31,26 +31,26 @@ class TransactionsRelationManager extends RelationManager
         return $table
             ->recordTitleAttribute('order_number')
             ->columns([
-                TextColumn::make('created_at')->dateTime(),
-                TextColumn::make('order_number'),
-                TextColumn::make('auth_code'),
-                TextColumn::make('status'),
-                TextColumn::make('response_message')
+                TextColumn::make('created_at')->translateLabel()->dateTime(),
+                TextColumn::make('order_number')->translateLabel(),
+                TextColumn::make('auth_code')->translateLabel(),
+                TextColumn::make('status')->translateLabel(),
+                TextColumn::make('response_message')->translateLabel()
             ])
             ->filters([
                 //
             ])
             ->headerActions([
-                Tables\Actions\CreateAction::make(),
+                // Tables\Actions\CreateAction::make(),
             ])
             ->actions([
-                Tables\Actions\EditAction::make(),
-                Tables\Actions\DeleteAction::make(),
+                // Tables\Actions\EditAction::make(),
+                // Tables\Actions\DeleteAction::make(),
             ])
             ->bulkActions([
-                Tables\Actions\BulkActionGroup::make([
-                    Tables\Actions\DeleteBulkAction::make(),
-                ]),
+                // Tables\Actions\BulkActionGroup::make([
+                //     Tables\Actions\DeleteBulkAction::make(),
+                // ]),
             ]);
     }
 }

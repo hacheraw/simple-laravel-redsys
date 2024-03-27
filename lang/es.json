@@ -1,0 +1,23 @@
+{
+  "Orders": "Pedidos",
+  "orders": "pedido",
+  "Total Orders": "Total de pedidos",
+  "Total Amount": "Ganancias totales",
+  "Unpaid Orders": "Pedidos sin pagar",
+  "Title": "Título",
+  "Description": "Descripción",
+  "Amount": "Cantidad",
+  "Is paid": "Pagado",
+  "Created at": "Fecha de creación",
+  "Order number": "Código de pedido",
+  "Auth code": "Código de autorización",
+  "Status": "Estado",
+  "Response message": "Respuesta TPV",
+  "Already paid": "Pago ya realizado",
+  "This invoice has already been paid on": "Esta factura ya fue pagada el",
+  "Payment successful": "Pago exitoso",
+  "Thank you for your purchase": "Gracias por tu compra",
+  "An error occurred": "Se ha producido un error",
+  "Bank response": "Respuesta del banco",
+  "Don't hesitate to contact us if you have any questions": "Si tienes alguna consulta, no dudes en contactarnos"
+}
