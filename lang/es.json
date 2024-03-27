@@ -17,7 +17,8 @@
   "This invoice has already been paid on": "Esta factura ya fue pagada el",
   "Payment successful": "Pago exitoso",
   "Thank you for your purchase": "Gracias por tu compra",
-  "An error occurred": "Se ha producido un error",
+  "Payment failed": "Pago fallido",
+  "Did you cancel the process?": "¿Canceló el proceso?",
   "Bank response": "Respuesta del banco",
   "Don't hesitate to contact us if you have any questions": "Si tienes alguna consulta, no dudes en contactarnos"
 }
