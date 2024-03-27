@@ -1,8 +1,8 @@
 @extends('layouts.notice')
 
 @section('content')
+<h1>{{ __('Payment failed') }}</h1>
 @if (!empty($payment->response_message))
-  <h1>{{ __('Payment failed') }}</h1>
   <p><strong>{{ __('Bank response') }}: {{ $payment->response_message }}</strong></p>
   @else
   <p><strong>{{ __('Did you cancel the process?') }}</strong></p>
