@@ -27,6 +27,11 @@ class OrderResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
+    public static function getEloquentQuery(): Builder
+    {
+        return parent::getEloquentQuery()->orderBy('created_at', 'desc');
+    }
+
     public static function form(Form $form): Form
     {
         return $form
