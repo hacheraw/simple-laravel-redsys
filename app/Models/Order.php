@@ -28,7 +28,7 @@ class Order extends Model implements RedsysPayable
 
     public function getTotalAmount(): int
     {
-        return $this->amount * 100;
+        return (int) number_format($this->amount, 2, '', '');
     }
 
     public function paidWithRedsys(): void
